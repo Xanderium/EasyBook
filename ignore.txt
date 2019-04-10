@@ -1,0 +1,62 @@
+Story:
+
+- Teacher:
+  - Creates account if one doesn't exist yet / Otherwise, signs into account
+    - Login page for teacher
+    - Shows homepage with a few options:
+      - Account drop-down for logging out and editing account details
+      - Account details page which should allow for editing or changing password
+      - Account password change screen
+      - Class list, each item of which may be viewed on a separate page
+      - Class page, on which a list of members in class can be found and printed out with a link to the print out page, with the ability to edit each code and remove users, as well as the ability to create a new redemption code, which brings user to the redemption creation page
+    - Login page has a register button, which goes to the registration page
+    - Registration page takes credentials, which then leads to the homepage with the class list
+  - Can click on new class at end of class list
+  - Select e-book for new class, for which a search page can be used to find a specific book
+  - Create redemption codes for the book on a code creation page, which can be returned to from the homepage
+  - Creates redemption codes for certain amount of users
+  - Can view which redemption codes have been redeemed
+
+- Student:
+  - Creates account if one doesn't exist yet / Otherwise, signs into account
+  - Registers account on registration page, which then brings them to homepage to list their classes
+  - May click on add class at end of class list, which has them redeem code in popup, which will add class and bring user to new class page
+  - Each class has its own page, via which the user can access the e-book on a separate page.
+  - May add each chapter in nav at top of page if sections are created for book
+  
+Pages:
+- Login
+  - For both student and teacher
+- Register
+  - For both student and teacher
+- Homepage
+  - For both student and teacher
+  - Redemption code pop up for student to redeem and teacher to create
+- Class page for teacher
+  - Holds redemption codes and link for printing, and access to book
+- Class page for student
+  - Holds redemption code used and link to book page
+- Account details
+  - For both student and teacher
+- Book page
+  - For both student and teacher
+  - May have sections
+  
+Database Structure:
+  Tables:
+    - Users:
+      - _id
+      - Email
+      - Name
+      - Password (Hash)
+      - Type
+      - Classes
+          - _id of corresponding class object
+    - Classes:
+      - _id
+      - Name
+      - Teacher
+      - Students
+        - Name
+        - Code used
+      - Codes left

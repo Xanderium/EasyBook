@@ -1,0 +1,317 @@
+
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: rgb(188, 228, 224);
+    margin: 0;
+}
+
+div.teacher {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+div.teacher section {
+    margin-top: 20px;
+    width: 96%;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    padding: 10px 0;
+    border-bottom: 2px rgb(83, 236, 223) solid;
+}
+
+ul li span#code {
+    color: rgb(8, 170, 156);
+}
+
+ul li span {
+    display: block;
+    color: rgb(172, 172, 172);
+}
+
+ul li i {
+    float: right;
+    margin-left: 60px;
+    margin-right: 10px;
+}
+
+section {
+    display: block;
+    margin: 20px;
+    margin-top: 80px;
+    padding: 40px;
+    background: white;
+
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    height: 61px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+nav a {
+    display: inline-block;
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+    color: rgb(8, 170, 156);
+    padding: 20px 0 20px 20px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: rgb(172, 172, 172);
+}
+
+nav button {
+    display: inline-block;
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+    color: rgb(8, 170, 156);
+    padding: 20px 0 20px 20px;
+    text-decoration: none;
+    transition: .2s;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+nav button:hover {
+    color: rgb(172, 172, 172);
+}
+
+section,
+form,
+div.book {
+    background: white;
+    margin: 0 auto;
+    max-width: 500px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    color: grey;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 3vw;
+    border-radius: 10px;
+    margin-top: 10vh;
+}
+
+div.book {
+    margin: 20px 0;
+    box-shadow: 0 0 40px rgba(83, 236, 223, 0.45);
+}
+
+section {
+    max-width: 1200px;
+}
+
+form h1,
+section h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: rgb(8, 170, 156);
+    text-shadow: 0 0 2px rgb(83, 236, 223);
+}
+
+section h1 {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+form h2,
+section h2 {
+    margin: 0 0 6px 0;
+    color: rgb(39, 39, 39);
+    text-shadow: 0 0 1px rgb(172, 172, 172);
+}
+
+section h2 {
+    font-size: 28px;
+}
+
+
+
+input {
+    display: block;
+    margin-bottom: 12px;
+    padding: 6px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    border: 1px rgb(226, 226, 226) solid;
+    border-radius: 10px;
+}
+
+select {
+    display: block;
+    margin-bottom: 12px;
+    padding: 6px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    border: 1px rgb(226, 226, 226) solid;
+    border-radius: 10px;
+}
+
+.uibutton {
+    display: inline-block;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    color: white;
+    padding: 10px 20px;
+    background: rgb(8, 170, 156);
+    box-shadow: 0 0 20px rgb(83, 236, 223);
+    border: none;
+    transition: .2s;
+}
+
+.uibutton:hover {
+    background: white;
+    color: rgb(39, 39, 39);
+}
+
+form a,
+section a {
+    display: inline-block;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    color: white;
+    padding: 10px 20px;
+    background: rgb(39, 39, 39);
+    box-shadow: 0 0 20px rgb(172, 172, 172);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+section a {
+    margin-top: 10px;
+}
+
+form a:hover {
+    background: white;
+    color: rgb(39, 39, 39);
+}
+
+.class-container {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.class-container div.class {
+    display: block;
+    flex: 0 0 200px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    border-radius: 10px;
+    background: white;
+    margin: 20px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    color: grey;
+}
+
+.class-container div.class h2 {
+    margin: 0 0 6px 0;
+    color: rgb(39, 39, 39);
+    text-shadow: 0 0 1px rgb(172, 172, 172);
+}
+
+.class-container div.class h3 {
+    margin: 0 0 6px 0;
+    color: rgb(172, 172, 172);
+}
+
+.class-container div.class h5 {
+    margin: 0 0 6px 0;
+    color: rgb(172, 172, 172);
+}
+
+.class-container div.class a {
+    display: inline-block;
+    font-family: 'Arimo', sans-serif;
+    font-size: 22px;
+    color: white;
+    padding: 6px 12px;
+    background: rgb(8, 170, 156);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: .2s;
+    margin-top: 10px;
+}
+
+#popup_stage1,
+#popup_stage2,
+#popup_stage3,
+#popup_delete {
+    z-index: 100;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-top: 0px;
+}
+
+
+
+.bookbox,
+.codebox {
+    display: grid;
+    overflow-x: scroll;
+    max-height: 180px;
+    width: 300px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.bookbox .book,
+.codebox .code {
+    padding: 10px;
+}
+
+.code {
+    padding: 0 10px;
+}
+
+span.bookauthor {
+    color: rgb(177, 177, 177);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bookbox .uibutton {
+    margin-bottom: 0;
+}
+
+@media (max-width: 960px) {
+    div.teacher {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

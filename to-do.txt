@@ -1,0 +1,4 @@
+Add auto-focus to the following pages:
+  - index.ejs
+  - signup.ejs
+  Add user check to all posts
