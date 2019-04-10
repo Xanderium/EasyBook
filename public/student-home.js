@@ -59,28 +59,11 @@ function finish(event) {
       classElement.appendChild(codeElement);
       classElement.appendChild(link);
       document.getElementById("classes").appendChild(classElement);
-//      <div class="class" classID="<%= curClass.id %>">
-//      <h2><%= curClass.name %></h2>
-//      <% if(type === "student") { %>
-//      <h3><%= curClass.teacher %></h3>
-//      <% } else { %>
-//      <h3><%= curClass.students %> Student<% if(curClass.students !== 1) { %>s<% } %></h3>
-//      <% } %>
-//      <% if(type === "student") { %>
-//      <h5><%= curClass.code %></h5>
-//      <% } %>
-//      <a href="#">Enter Class</a>
-//    </div>
     }
   };
   request.open("POST", "redeem-code");
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send("classID=" + classID + "&code=" + code);
-  // {
-  //   className:className,
-  //   bookID:bookID,
-  //   codes:codeNumber
-  // }
 }
 // If the enter button was pressed, click the form's next button
 function clickNext(event) {
