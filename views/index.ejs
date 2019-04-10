@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav>
+      <a href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+      <a href="/login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+    </nav>
+    <form method="post" class="userForm" action="login" name="login">
+      <h1>EasyBook</h1>
+      <p id="errorMessage"><% if(message) { %><%= message %><% } %></p>
+      <h2>Login</h2>
+      <input type="hidden" name="type" value="student">
+      <label for="">Email</label>
+      <input type="text" name="email">
+      <label for="">Password</label>
+      <input type="password" name="password">
+      <input type="submit" namle="submitBtn" value="Login" class="uibutton">
+      <a href="/signup">Sign Up</a>
+      </form>
+    <script src="login.js"></script>
+  </body>
+</html>

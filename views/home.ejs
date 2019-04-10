@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+</head>
+
+<body>
+  <nav>
+    <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+    <% if(type === "teacher") { %><button onclick="popup()" id="start"><i class="fas fa-book"></i> New Class</button>
+    <a href="/report"><i class="fas fa-book"></i> Report</a>
+    <% } else if(type === "student") { %><button onclick="popup()" id="redeem"><i class="fas fa-book"></i> Redeem Code</button><% } %>
+  </nav>
+ <!-- Second Stage Popup -->
+  <% if(type === "teacher") { %>
+  <form id="popup_stage1">
+      <h1>EasyBook</h1>
+      <h2>Create A Class</h2>
+      <label for="">Name your class</label>
+      <input type="text" name="class">
+      <input type="button" name="next" value="Next Step" class="uibutton" id="next1">
+  </form>
+  <!-- Second Stage Popup -->
+  <form id="popup_stage2">
+      <h1>EasyBook</h1>
+      <h2>Add A Book</h2>
+      <label for="">Search for a book</label>
+      <input type="text" id="search">
+      <p id="searching"></p>
+      <div class="bookbox" id="books"></div>
+  </form>
+  <!-- Third Stage Popup -->
+  <form id="popup_stage3">
+      <h1>EasyBook</h1>
+      <h2>Generate Codes</h2>
+      <label for="">Select the number of book codes you wish to generate.</label>
+      <input type="number" id="codeNumber">
+      <input type="button" name="next" value="Finish" class="uibutton" id="finish">
+  </form>
+  <% } else if(type === "student") { %>
+  <form id="popup_stage1">
+      <h1>EasyBook</h1>
+      <h2>Redeem Code</h2>
+      <label for="">Enter code</label>
+      <input type="text" id="code">
+      <p id="searching"></p>
+      <div class="bookbox" id="class"></div>
+  </form>
+  <% } %>
+  <div class="class-container" id="classes">
+    <% for(var i in classes) {
+      var curClass = classes[i]; %>
+    <div class="class" classID="<%= curClass._id %>">
+      <h2><%= curClass.name %></h2>
+      <% if(type === "student") { %>
+      <h3><%= curClass.teacher %></h3>
+      <% } else { %>
+      <h3><%= curClass.students %> Student<% if(curClass.students !== 1) { %>s<% } %></h3>
+      <% } %>
+      <% if(type === "student") { %>
+      <h5><%= curClass.code %></h5>
+      <% } %>
+      <a href="classes/<%= curClass._id %>/view">Enter Class</a>
+    </div>
+    <% } %>
+    <% if(type === "teacher") { %>
+    <div class="class">
+      <h2>New Class</h2>
+      <a href="#" id="newClass">+ Class</a>
+    </div>
+    <% } else if(type === "student") { %>
+    <div class="class">
+      <h2>Redeem Code</h2>
+      <a href="#" id="redeemCode">+ Redeem</a>
+    </div>
+    <% } %>
+  </div>
+  <% if(type === "teacher") { %><script src="teacher-home.js" async defer></script>
+  <% } else if(type === "student") { %><script src="student-home.js" async defer></script><% } %>
+</body>
+
+</html>

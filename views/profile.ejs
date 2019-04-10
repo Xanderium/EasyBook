@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+        <a href="/home"><i class="fas fa-book"></i> Home</a>
+    </nav>
+  
+    <form class="userForm" action="/update-info" method="post" name="updateInfo">
+        <h1>EasyBook</h1>
+        <h2>Update Student Account</h2>
+      <% if(information) { %><p><%= information %></p><% } %>
+        <label for="">First Name</label>
+        <input type="text" name="firstName" value="<%= user.firstName %>">
+        <label for="">Last Name</label>
+        <input type="text" name="lastName" value="<%= user.lastName %>">
+        <label for="">Email Address</label>
+        <input type="text" name="email" value="<%= user.email %>">
+        <% if(user.type === "student") { %><label for="">Grade Level</label>
+        <select name="grade" grade="<%= user.grade %>">
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+          <option value="5">5th</option>
+          <option value="6">6th</option>
+          <option value="7">7th</option>
+          <option value="8">8th</option>
+          <option value="9">9th</option>
+          <option value="10">10th</option>
+          <option value="11">11th</option>
+          <option value="12">12th</option>
+        </select><% } %>
+        <input type="submit" name="submitBtn" value="Update Information" class="uibutton">
+        <a href="/home">Back</a>
+    </form>
+    <form action="/update-password" method="post" name="updatePass">
+        <h2>Update Student Password</h2>
+      <% if(password) { %><p><%= password %></p><% } %>
+        <label for="">Password</label>
+        <input type="password" name="password">
+        <label for="">Confirm Password</label>
+        <input type="password" name="confirm">
+        <input type="submit" name="submitBtn" value="Update Password" class="uibutton">
+        <a href="/home">Back</a>
+    </form>
+    <script src="profile.js" async defer></script>
+</body>
+
+</html>

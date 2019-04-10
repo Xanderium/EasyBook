@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav>
+      <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+        <a href="/home"><i class="fas fa-book"></i> Home</a>
+    </nav>
+    <section>
+        <h1>Students</h1>
+        <ul>
+          <% for(var i in students) {
+            var curStudent = students[i]; %>
+          <li><%= curStudent.name %> <span id="code">Class: <%= curStudent.class %></span>
+            <span>Book: <%= curStudent.book %></span>
+            <span>Redemption Code: <%= curStudent.code %></span>
+          </li>
+          <% } %>
+        </ul>
+    </section>
+    <script src="" async defer></script>
+</body>
+
+</html>
